@@ -1,58 +1,67 @@
-# Scanner
-These are basic scanners.
+# 🔍 CyberSecurity Network Sniffer
 
-They can check the number of devices connected to your network and print their local IP addresses along with their MAC addresses.
+A simple but effective Python-based network scanner that detects devices connected to your local network, displaying their IP and MAC addresses.
 
-1. Sniff_Tool.py
-_________________
+This project contains two basic scanners built using **Scapy**, designed for quick device enumeration within a specified subnet.
 
-I have used argparse and scapy to make this basic network scanner.
+---
 
-[Syntax : python &lt;file_name&gt; -ip &lt;ip_address&gt;/&lt;subnet&gt;]
+## 📁 Project Files
 
-[NOTE : Use it with root/administrative priviledges]
+### `Sniff_Tool.py`
+- Uses `argparse` and `scapy`.
+- Syntax:  
+  ```bash
+  sudo python Sniff_Tool.py -ip <ip_address>/<subnet>
 
-One needs to have argparse and scapy installed.
+- Example:  
+  ```bash
+  sudo python Sniff_Tool.py -ip 192.168.1.1/24
+  ```
 
-They can be installed with :
+### `Sniff_Tool2.py`
+- Uses `sys` and `scapy`.
+- Syntax:  
+  ```bash
+  sudo python Sniff_Tool2.py <ip_address>/<subnet>
+  ```
+- Example:  
+  ```bash
+  sudo python Sniff_Tool2.py 192.168.1.1/24
+  ```
 
-   pip install argparse
+---
 
-   pip install scapy
-   
-   
-   
-   OUTPUT : 
-   
-   {'ip': '192.168.1.1', ' mac': '7c:a9:6b:07:6e:14'}
-   
-   {'ip': '192.168.1.3', ' mac': '88:11:96:ff:79:a0'}
-   
-   {'ip': '192.168.1.10', ' mac': '68:db:f5:84:80:7f'}
-   
-   {'ip': '192.168.1.4', ' mac': 'd4:f5:47:17:b0:a6'}
-   
-   {'ip': '192.168.1.14', ' mac': 'a4:c3:f0:4f:a5:06'}
-   
-   {'ip': '192.168.1.2', ' mac': '6c:56:97:b0:fe:b3'}
-   
-   {'ip': '192.168.1.26', ' mac': '28:6c:07:8c:96:f5'}
+## ⚙️ Requirements
 
-   
+- Python 3.x
+- `scapy`  
+  Install using:
+  ```bash
+  pip install scapy
+  ```
+- `argparse` (comes built-in with Python)
 
-2. Sniff_Tool2.py
-__________________
+> 💡 **Run the scripts with root or administrative privileges.**  
+> These tools rely on packet sniffing which requires elevated permissions.
 
-I have used sys and scapy to build this basic network scanner.
+---
 
-Call it from the command line using root/admin privileges
+## 🧪 Sample Output
 
-[Syntax : python &lt;file_name&gt; &lt;ip_address&gt;/&lt;subnet&gt;]
+```json
+{'ip': '192.168.1.1',  'mac': '7c:a9:6b:07:6e:14'}
+{'ip': '192.168.1.3',  'mac': '88:11:96:ff:79:a0'}
+{'ip': '192.168.1.10', 'mac': '68:db:f5:84:80:7f'}
+{'ip': '192.168.1.4',  'mac': 'd4:f5:47:17:b0:a6'}
+{'ip': '192.168.1.14', 'mac': 'a4:c3:f0:4f:a5:06'}
+{'ip': '192.168.1.2',  'mac': '6c:56:97:b0:fe:b3'}
+{'ip': '192.168.1.26', 'mac': '28:6c:07:8c:96:f5'}
+```
 
-[Note : Put the ip address of your default gateway(router) to get all the client's ip address.]
-Scapy can be installed with : 
-  
-   pip install scapy
+---
 
+## 🔐 Disclaimer
 
+This tool is intended **for educational and ethical use only**. Always get proper authorization before scanning networks.
 
